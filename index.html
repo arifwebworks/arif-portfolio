@@ -1,33 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arif Ullah – Web Developer Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
 
   <header>
     <h1>Arif Ullah</h1>
-    <p>Front-End Web Developer | Freelance Website Maker</p>
+    <p>Freelance Web Developer | HTML, CSS, Bootstrap</p>
     <nav>
       <a href="#projects">Projects</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
+      <button id="theme-toggle">🌓</button>
     </nav>
   </header>
 
   <section id="projects">
-    <h2>My Projects</h2>
+    <h2>Featured Projects</h2>
     <div class="project">
       <h3>Business Website</h3>
-      <p>A modern business website built with HTML, CSS, and JS for a local startup.</p>
+      <p>HTML/CSS website for a local business with responsive layout.</p>
       <a href="#">Live Demo</a>
     </div>
     <div class="project">
       <h3>Personal Blog</h3>
-      <p>Responsive blog layout with a clean design and mobile optimization.</p>
+      <p>Clean and modern blog page design for a writing client.</p>
+      <a href="#">Live Demo</a>
+    </div>
+    <div class="project">
+      <h3>Landing Page</h3>
+      <p>Bootstrap landing page with mobile-first design.</p>
       <a href="#">Live Demo</a>
     </div>
   </section>
@@ -35,20 +42,26 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I’m Arif Ullah, a freelance front-end web developer from Karachi. I create
-      websites that are fast, mobile-friendly, and SEO-optimized. I have experience
-      in HTML, CSS, Bootstrap, and some JavaScript. My goal is to help businesses go online beautifully.
+      I’m Arif Ullah, a front-end web developer from Karachi. I build modern, responsive websites for businesses and individuals.
+      I'm focused on clean design, speed, and user experience.
     </p>
   </section>
 
   <section id="contact">
     <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:inforizwantravel@gmail.com">inforizwantravel@gmail.com</a></p>
-    <p>WhatsApp: <a href="https://wa.me/923052201003" target="_blank">+92 305 2201003</a></p>
+    <form action="https://formspree.io/f/xayrwnpv" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <footer>
     <p>&copy; 2025 Arif Ullah. All rights reserved.</p>
+    <p>Email: <a href="mailto:madebyarif96@gmail.com">madebyarif96@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/923052201003" target="_blank">+92 305 2201003</a></p>
+    <p><a href="https://arifwebworks.github.io/arif-portfolio/" target="_blank">View Portfolio Live</a></p>
   </footer>
 
 </body>
