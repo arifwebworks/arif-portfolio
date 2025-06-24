@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arif Ullah | Front-End Developer</title>
+    <meta name="description" content="Portfolio of Arif Ullah, a creative Front-End Developer specializing in building modern, responsive web applications with HTML, CSS, JavaScript, and React.">
+    <meta name="keywords" content="Front-End Developer, HTML, CSS, JavaScript, React, Portfolio, Web Development, Arif Ullah">
+    <meta name="author" content="Arif Ullah">
+    <meta name="theme-color" content="#f8fafc">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arifullah-portfolio.github.io/">
+    <meta property="og:title" content="Arif Ullah | Front-End Developer">
+    <meta property="og:description" content="Portfolio of Arif Ullah, a creative Front-End Developer specializing in building modern, responsive web applications.">
+    <meta property="og:image" content="https://picsum.photos/seed/arifullah/1200/630.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://arifullah-portfolio.github.io/">
+    <meta property="twitter:title" content="Arif Ullah | Front-End Developer">
+    <meta property="twitter:description" content="Portfolio of Arif Ullah, a creative Front-End Developer specializing in building modern, responsive web applications.">
+    <meta property="twitter:image" content="https://picsum.photos/seed/arifullah/1200/630.jpg">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#4f46e5',
+                    },
+                    animation: {
+                        'fade-up': 'fade-up 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        'fade-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .skill-icon {
+            transition: transform 0.3s ease;
+        }
+        .skill-icon:hover {
+            transform: translateY(-5px);
+        }
+        .social-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+
+
+        /* Primary Button */
+/*.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background-color: #4f46e5; /* Tailwind indigo-600 */
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background-color: #4338ca; /* Tailwind indigo-700 */
+}*/
+
+/* Outline Button */
+/*.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #4f46e5;
+  color: #4f46e5;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.btn-outline:hover {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  background-color: #eef2ff; /* Tailwind indigo-50 */
+  color: #4f46e5;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+*/
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+    <!-- Header -->
+    <header class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl font-bold text-primary dark:text-indigo-400">AU</span>
+                <span class="hidden md:inline text-sm font-medium">Arif Ullah</span>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="font-medium hover:text-primary dark:hover:text-indigo-400 transition-colors">Home</a>
+                <a href="#about" class="font-medium hover:text-primary dark:hover:text-indigo-400 transition-colors">About</a>
+                <a href="#skills" class="font-medium hover:text-primary dark:hover:text-indigo-400 transition-colors">Skills</a>
+                <a href="#projects" class="font-medium hover:text-primary dark:hover:text-indigo-400 transition-colors">Projects</a>
+                <a href="#contact" class="font-medium hover:text-primary dark:hover:text-indigo-400 transition-colors">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block"></i>
+                </button>
+                
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 shadow-md">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#home" class="font-medium hover:text-primary dark:hover:text-indigo-400 transition-colors py-2">Home</a>
+                <a href="#about" class="font-medium hover:text-primary dark:hover:text-indigo-400 transition-colors py-2">About</a>
+                <a href="#skills" class="font-medium hover:text-primary dark:hover:text-indigo-400 transition-colors py-2">Skills</a>
+                <a href="#projects" class="font-medium hover:text-primary dark:hover:text-indigo-400 transition-colors py-2">Projects</a>
+                <a href="#contact" class="font-medium hover:text-primary dark:hover:text-indigo-400 transition-colors py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-32">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Hi, I'm <span class="text-primary dark:text-indigo-400">Arif Ullah</span></h1>
+                    <h2 class="text-2xl md:text-3xl font-medium text-gray-600 dark:text-gray-300 mb-6">Creative Front-End Developer</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg">
+                    I craft engaging digital experiences using clean, efficient code and a strong eye for design. Let’s collaborate to build something exceptional!
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="px-6 py-3 bg-primary hover:bg-secondary text-white rounded-lg shadow-md hover:shadow-lg transition-all">
+                            Contact Me
+                        </a>
+                        <a href="#projects" class="px-6 py-3 border border-primary text-primary hover:bg-primary hover:text-white rounded-lg transition-all">
+                            View My Work
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl">
+                        <img src="img/img-1.jpeg" alt="Arif Ullah" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <!-- <section id="about" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+                <div class="w-16 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-10">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold mb-4">My Journey</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        I'm a passionate Front-End Developer currently pursuing a diploma in Web Development. My journey began with curiosity about how websites work, and it grew into a commitment to building fast, user-friendly, and visually appealing web experiences.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        I focus on writing clean, maintainable code and staying up-to-date with modern tools and technologies. My goal is to build digital products that not only look great but also function perfectly on all devices.
+                    </p>
+                    
+                    <h3 class="text-2xl font-semibold mb-4 mt-8">My Mission</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        To create elegant, user-friendly websites that solve real-world problems and elevate digital experiences. I'm committed to continuous learning and delivering work that exceeds expectations.
+                    </p>
+                </div>
+                
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md p-6 mb-8">
+                        <h3 class="text-xl font-semibold mb-4">Key Skills</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">HTML5 & CSS3</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">JavaScript</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">React.js</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Responsive Design</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md p-6">
+                        <h3 class="text-xl font-semibold mb-4">🎓 Education & 💼 Experience</h3>
+                            <div class="flex items-start">
+                                <div class="bg-primary dark:bg-indigo-600 p-2 rounded-lg mr-4">
+                                    <i class="fas fa-graduation-cap text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">3-Year Diploma in Web Development (In Progress)</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Aptech Computer Education Clifton Campus</p>
+                                </div>
+                            </div>
+                            
+                             <div class="flex items-start">
+                                <div class="bg-primary dark:bg-indigo-600 p-2 rounded-lg mr-4">
+                                    <i class="fas fa-briefcase text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Digital Marketing Course</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">NextSkill Center, Karachi</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary dark:bg-indigo-600 p-2 rounded-lg mr-4">
+                                    <i class="fas fa-briefcase text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Freelance Front-End Developer (2022 – Present)</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Developed websites for businesses, travel agencies, product landing pages, and responsive e-commerce stores using modern front-end tools.
+                        <div class="space-y-4"></p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary dark:bg-indigo-600 p-2 rounded-lg mr-4">
+                                    <i class="fas fa-briefcase text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Matriculation – Science Group</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Completed</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary dark:bg-indigo-600 p-2 rounded-lg mr-4">
+                                    <i class="fas fa-briefcase text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Intermediate – Humanities</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Mardan Board (Exams done – awaiting results)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6">
+                                <a href="#" class="inline-flex items-center px-4 py-2 bg-primary hover:bg-secondary text-white rounded-lg transition-all">
+                                    <i class="fas fa-download mr-2"></i> Download Resume
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- About Section -->
+<section id="about" class="py-20 bg-gray-100 dark:bg-gray-800">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+            <div class="w-16 h-1 bg-primary mx-auto"></div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-10">
+            <!-- Left Column -->
+            <div class="md:w-1/2" data-aos="fade-right">
+                <h3 class="text-2xl font-semibold mb-4">My Journey</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                    I'm a passionate Front-End Developer currently pursuing a diploma in Web Development. My journey began with curiosity about how websites work, and it grew into a commitment to building fast, user-friendly, and visually appealing web experiences.
+                </p>
+                <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                    I focus on writing clean, maintainable code and staying up-to-date with modern tools and technologies. My goal is to build digital products that not only look great but also function perfectly on all devices.
+                </p>
+
+                <h3 class="text-2xl font-semibold mb-4 mt-8">My Mission</h3>
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    To create elegant, user-friendly websites that solve real-world problems and elevate digital experiences. I'm committed to continuous learning and delivering work that exceeds expectations.
+                </p>
+            </div>
+
+            <!-- Right Column -->
+            <div class="md:w-1/2" data-aos="fade-left">
+                <!-- Key Skills -->
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md p-6 mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Key Skills</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">HTML5 & CSS3</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">JavaScript</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Responsive Design</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education & Experience -->
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">Education & Experience</h3>
+
+                    <div class="flex items-start mb-4">
+                        <div class="bg-primary dark:bg-indigo-600 p-2 rounded-lg mr-4">
+                            <i class="fas fa-graduation-cap text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">3-Year Diploma in Web Development (In Progress)</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Aptech Computer Education Clifton Campus</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start mb-4">
+                        <div class="bg-primary dark:bg-indigo-600 p-2 rounded-lg mr-4">
+                            <i class="fas fa-briefcase text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Freelance Front-End Developer (2022 – Present)</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">
+                                Developed websites for businesses, travel agencies, product landing pages, and responsive e-commerce stores using modern front-end tools.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start mb-4">
+                        <div class="bg-primary dark:bg-indigo-600 p-2 rounded-lg mr-4">
+                            <i class="fas fa-user-graduate text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Intermediate – Humanities</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Mardan Board (Exams done – awaiting results)</p>
+                        </div>
+                    </div>
+
+                    <!-- Download Resume Button -->
+                    <div class="mt-6">
+                        <a href="resume/Arif_Ullah_Creative_Resume.pdf" download class="inline-flex items-center px-4 py-2 bg-primary hover:bg-secondary text-white rounded-lg transition-all">
+                            <i class="fas fa-download mr-2"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Skills Section -->
+    <!-- <section id="skills" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">My Skills</h2>
+                <div class="w-16 h-1 bg-primary mx-auto"></div>
+                <p class="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
+                    I've worked with a variety of technologies and tools to create robust, scalable web applications.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="skill-icon flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-indigo-900/30 rounded-full mb-4">
+                        <i class="fab fa-html5 text-3xl text-primary dark:text-indigo-400"></i>
+                    </div>
+                    <h3 class="font-medium text-center">HTML5</h3>
+                </div>
+                
+                <div class="skill-icon flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-indigo-900/30 rounded-full mb-4">
+                        <i class="fab fa-css3-alt text-3xl text-primary dark:text-indigo-400"></i>
+                    </div>
+                    <h3 class="font-medium text-center">CSS3</h3>
+                </div>
+                
+                <div class="skill-icon flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-indigo-900/30 rounded-full mb-4">
+                        <i class="fab fa-js text-3xl text-primary dark:text-indigo-400"></i>
+                    </div>
+                    <h3 class="font-medium text-center">JavaScript</h3>
+                </div>
+                
+                <div class="skill-icon flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-indigo-900/30 rounded-full mb-4">
+                        <i class="fab fa-react text-3xl text-primary dark:text-indigo-400"></i>
+                    </div>
+                    <h3 class="font-medium text-center">React</h3>
+                </div>
+                
+                <div class="skill-icon flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-indigo-900/30 rounded-full mb-4">
+                        <i class="fab fa-git-alt text-3xl text-primary dark:text-indigo-400"></i>
+                    </div>
+ <h3 class="font-medium text-center">Git</h3>
+                </div>
+                
+                <div class="skill-icon flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-indigo-900/30 rounded-full mb-4">
+                        <i class="fab fa-node-js text-3xl text-primary dark:text-indigo-400"></i>
+                    </div>
+                    <h3 class="font-medium text-center">Node.js</h3>
+                </div>
+                
+                <div class="skill-icon flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="700">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-indigo-900/30 rounded-full mb-4">
+                        <i class="fab fa-sass text-3xl text-primary dark:text-indigo-400"></i>
+                    </div>
+                    <h3 class="font-medium text-center">Sass</h3>
+                </div>
+                
+                <div class="skill-icon flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="800">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-indigo-900/30 rounded-full mb-4">
+                        <i class="fab fa-figma text-3xl text-primary dark:text-indigo-400"></i>
+                    </div>
+                    <h3 class="font-medium text-center">Figma</h3>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Skills Section -->
+<section id="skills" class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">My Skills</h2>
+            <div class="w-16 h-1 bg-primary mx-auto"></div>
+            <p class="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
+                I use a variety of tools to build modern, responsive websites.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- HTML5 -->
+            <div class="skill-icon flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-indigo-900/30 rounded-full mb-4">
+                    <i class="fab fa-html5 text-3xl text-primary dark:text-indigo-400"></i>
+                </div>
+                <h3 class="font-medium text-center">HTML5</h3>
+            </div>
+
+            <!-- CSS3 -->
+            <div class="skill-icon flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-indigo-900/30 rounded-full mb-4">
+                    <i class="fab fa-css3-alt text-3xl text-primary dark:text-indigo-400"></i>
+                </div>
+                <h3 class="font-medium text-center">CSS3</h3>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="skill-icon flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-indigo-900/30 rounded-full mb-4">
+                    <i class="fab fa-js text-3xl text-primary dark:text-indigo-400"></i>
+                </div>
+                <h3 class="font-medium text-center">JavaScript</h3>
+            </div>
+
+            <!-- Bootstrap -->
+            <div class="skill-icon flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-indigo-900/30 rounded-full mb-4">
+                    <i class="fab fa-bootstrap text-3xl text-primary dark:text-indigo-400"></i>
+                </div>
+                <h3 class="font-medium text-center">Bootstrap</h3>
+            </div>
+
+            <!-- Git -->
+            <div class="skill-icon flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="500">
+                <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-indigo-900/30 rounded-full mb-4">
+                    <i class="fab fa-git-alt text-3xl text-primary dark:text-indigo-400"></i>
+                </div>
+                <h3 class="font-medium text-center">Git</h3>
+            </div>
+
+            <!-- GitHub -->
+            <div class="skill-icon flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="600">
+                <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-indigo-900/30 rounded-full mb-4">
+                    <i class="fab fa-github text-3xl text-primary dark:text-indigo-400"></i>
+                </div>
+                <h3 class="font-medium text-center">GitHub</h3>
+            </div>
+
+            <!-- Figma -->
+            <div class="skill-icon flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="700">
+                <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-indigo-900/30 rounded-full mb-4">
+                    <i class="fab fa-figma text-3xl text-primary dark:text-indigo-400"></i>
+                </div>
+                <h3 class="font-medium text-center">Figma</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Projects Section -->
+   <section id="projects" class="py-20 bg-gray-100 dark:bg-gray-800">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
+      <div class="w-16 h-1 bg-primary mx-auto"></div>
+      <p class="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
+        Check out some of my real-world projects built with modern front-end tools.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Project 1 -->
+      <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md transition-all" data-aos="fade-up" data-aos-delay="100">
+        <div class="relative h-48 overflow-hidden">
+          <img src="img/project1.jpg" alt="Business Website" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Travel Agency Website</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            A responsive website for a travel agency built with clean layout and WhatsApp contact integration.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 bg-primary/10 dark:bg-indigo-900/30 text-primary dark:text-indigo-400 rounded-full text-sm">HTML</span>
+            <span class="px-3 py-1 bg-primary/10 dark:bg-indigo-900/30 text-primary dark:text-indigo-400 rounded-full text-sm">CSS</span>
+            <span class="px-3 py-1 bg-primary/10 dark:bg-indigo-900/30 text-primary dark:text-indigo-400 rounded-full text-sm">JavaScript</span>
+          </div>
+          <div class="flex space-x-3">
+            <a href="#" class="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-lg transition-all"><i class="fab fa-github mr-2"></i>GitHub</a>
+            <a href="#" class="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-lg transition-all"><i class="fas fa-external-link-alt mr-2"></i>Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md transition-all" data-aos="fade-up" data-aos-delay="200">
+        <div class="relative h-48 overflow-hidden">
+          <img src="img/project2.jpg" alt="Portfolio Template" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Portfolio Template</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Personal portfolio template with dark/light mode, smooth scroll, and responsive layout.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 bg-primary/10 dark:bg-indigo-900/30 text-primary dark:text-indigo-400 rounded-full text-sm">HTML</span>
+            <span class="px-3 py-1 bg-primary/10 dark:bg-indigo-900/30 text-primary dark:text-indigo-400 rounded-full text-sm">CSS</span>
+            <span class="px-3 py-1 bg-primary/10 dark:bg-indigo-900/30 text-primary dark:text-indigo-400 rounded-full text-sm">Bootstrap</span>
+          </div>
+          <div class="flex space-x-3">
+            <a href="https://github.com/arifwebworks/arif-portfolio" class="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-lg transition-all"><i class="fab fa-github mr-2"></i>GitHub</a>
+            <a href="https://arifwebworks.github.io/arif-portfolio/" class="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-lg transition-all"><i class="fas fa-external-link-alt mr-2"></i>Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md transition-all" data-aos="fade-up" data-aos-delay="300">
+        <div class="relative h-48 overflow-hidden">
+          <img src="img/project3.jpg" alt="Product Landing Page" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Product Landing Page</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            A single-product landing page for a skincare brand with a carousel and contact form.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 bg-primary/10 dark:bg-indigo-900/30 text-primary dark:text-indigo-400 rounded-full text-sm">HTML</span>
+            <span class="px-3 py-1 bg-primary/10 dark:bg-indigo-900/30 text-primary dark:text-indigo-400 rounded-full text-sm">CSS</span>
+            <span class="px-3 py-1 bg-primary/10 dark:bg-indigo-900/30 text-primary dark:text-indigo-400 rounded-full text-sm">JavaScript</span>
+          </div>
+          <div class="flex space-x-3">
+            <a href="#" class="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-lg transition-all"><i class="fab fa-github mr-2"></i>GitHub</a>
+            <a href="#" class="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-lg transition-all"><i class="fas fa-external-link-alt mr-2"></i>Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12" data-aos="fade-up">
+      <a href="#contact" class="inline-flex items-center px-6 py-3 bg-primary hover:bg-secondary text-white rounded-lg shadow-md hover:shadow-lg transition-all">
+        <i class="fas fa-arrow-right mr-2"></i> Let's Collaborate
+      </a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                <div class="w-16 h-1 bg-primary mx-auto"></div>
+                <p class="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
+                    Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-10">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <form id="contact-form" class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8">
+                        <div class="mb-6">
+                            <label for="name" class="block text-sm font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-indigo-500" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-sm font-medium mb-2">Your Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-indigo-500" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-indigo-500" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium mb-2">Your Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-indigo-500" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full px-6 py-3 bg-primary hover:bg-secondary text-white rounded-lg shadow-md hover:shadow-lg transition-all">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8 h-full">
+                        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 dark:bg-indigo-900/30 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-envelope text-primary dark:text-indigo-400"></i>
+                                </div>
+                                <div>
+ <h4 class="font-medium mb-1">Email</h4>
+                                    <a href="mailto:madebyarif96@gmail.com" class="text-primary dark:text-indigo-400 hover:underline">madebyarif96@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 dark:bg-indigo-900/30 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-phone text-primary dark:text-indigo-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Phone</h4>
+                                    <a href="tel:+923052201003" class="text-primary dark:text-indigo-400 hover:underline">+92 (305) 220-1003</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 dark:bg-indigo-900/30 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-map-marker-alt text-primary dark:text-indigo-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Location</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">Karachi, Pakistan</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <h4 class="font-medium mb-4">Quick Connect</h4>
+                                <div class="flex space-x-4">
+                                     <!-- GitHub -->
+                                    <a href="https://github.com/arifwebworks" target="_blank" class="social-icon p-3 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-primary dark:hover:bg-indigo-600 transition-all">
+                                        <i class="fab fa-github text-gray-700 dark:text-gray-300"></i>
+                                    </a>
+                                    <!-- LinkedIn -->
+                                    <a href="https://linkedin.com/in/madebyarif" target="_blank" class="social-icon p-3 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-primary dark:hover:bg-indigo-600 transition-all">
+                                        <i class="fab fa-linkedin-in text-gray-700 dark:text-gray-300"></i>
+                                    </a>
+                                    <!-- Twitter -->
+                                    <a href="https://twitter.com/madebyarif" target="_blank" class="social-icon p-3 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-primary dark:hover:bg-indigo-600 transition-all">
+                                        <i class="fab fa-twitter text-gray-700 dark:text-gray-300"></i>
+                                    </a>
+                                    <!-- Instagram -->
+                                    <a href="https://instagram.com/madebyarif" target="_blank" class="social-icon p-3 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-primary dark:hover:bg-indigo-600 transition-all">
+                                        <i class="fab fa-instagram text-gray-700 dark:text-gray-300"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <h4 class="font-medium mb-4">WhatsApp</h4>
+                                <a href="https://wa.me/923052201003" class="inline-flex items-center px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-all">
+                                    <i class="fab fa-whatsapp mr-2"></i> Chat on WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <!-- Footer Brand Name -->
+<span class="text-2xl font-bold text-primary">AU</span>
+<span class="hidden md:inline text-sm font-medium">Arif Ullah</span>
+
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Crafting digital experiences with clean, efficient code.
+                    </p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-6 mb-4">
+                          <!-- GitHub -->
+                                    <a href="https://github.com/arifwebworks" target="_blank" class="social-icon p-3 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-primary dark:hover:bg-indigo-600 transition-all">
+                                        <i class="fab fa-github text-gray-700 dark:text-gray-300"></i>
+                                    </a>
+                                    <!-- LinkedIn -->
+                                    <a href="https://linkedin.com/in/madebyarif" target="_blank" class="social-icon p-3 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-primary dark:hover:bg-indigo-600 transition-all">
+                                        <i class="fab fa-linkedin-in text-gray-700 dark:text-gray-300"></i>
+                                    </a>
+                                    <!-- Twitter -->
+                                    <a href="https://twitter.com/madebyarif" target="_blank" class="social-icon p-3 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-primary dark:hover:bg-indigo-600 transition-all">
+                                        <i class="fab fa-twitter text-gray-700 dark:text-gray-300"></i>
+                                    </a>
+                                    <!-- Instagram -->
+                                    <a href="https://instagram.com/madebyarif" target="_blank" class="social-icon p-3 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-primary dark:hover:bg-indigo-600 transition-all">
+                                        <i class="fab fa-instagram text-gray-700 dark:text-gray-300"></i>
+                                    </a>
+
+                    </div>
+                    <!-- Footer Rights -->
+<p class="text-gray-400 text-sm">
+    &copy; 2025 Arif Ullah. All rights reserved.
+</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or use preferred color scheme
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            
+            // Save preference
+            if (html.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const formValues = Object.fromEntries(formData.entries());
+            
+            // In a real application, you would send this data to a server
+            console.log('Form submitted:', formValues);
+            
+            // Show success message
+            const formContainer = contactForm.parentElement;
+            formContainer.innerHTML = `
+                <div class="text-center py-10">
+                    <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-check text-green-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Message Sent!</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        Thank you for reaching out. I'll get back to you as soon as possible.
+                    </p>
+                    <a href="#contact" class="px-6 py-3 bg-primary hover:bg-secondary text-white rounded-lg shadow-md hover:shadow-lg transition-all">
+                        Send Another Message
+                    </a>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
